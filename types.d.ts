@@ -4,5 +4,6 @@ export type Company = {
     category?:string,
     isBoycott: boolean,
     whyBoycott?: string[],
+    proofs?:string[],
     alternatives?:string[],
 }
