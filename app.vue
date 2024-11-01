@@ -8,6 +8,9 @@ const filteredCompanies = computed(()=>{
   })
 })
 
+const boycotSitesHTML =
+    `<ul><li><a href="https://www.boykot.co/" target="_blank">https://www.boykot.co/</a></li><li><a href="https://boykothareketi.com/" target="_blank">https://boykothareketi.com/</a></li><li><a href="https://boycott.thewitness.news/browse/1" target="_blank">https://boycott.thewitness.news/browse/1</a></li></ul>`;
+
 
 
 
@@ -30,12 +33,22 @@ const filteredCompanies = computed(()=>{
       </template>
     </UCard>
 
+
     <TheCompany v-for="company in filteredCompanies"
                 :name="company.name"
                 :is-boycott="company.isBoycott"
                 :why-boycott="company.whyBoycott"
                 :alternatives="company.alternatives"
+                :proofs="company.proofs"
     />
+    <UCard class="my-2">
+      <p class="mb-2">
+        Bu sitede yeterli bilgi bulamadınız mı? Diğer boykot bilgi sitelerini deneyin :
+      </p>
+      <a class="text-sky-400 mr-4 mb-4 p-1 border border-sky-400 rounded"  href="https://boycott.thewitness.news/browse/1" target="_blank">https://boycott.thewitness.news/browse/1</a>
+      <a class="text-sky-400 mr-4 mb-4 p-1 border border-sky-400 rounded" href="https://www.boykot.co/" target="_blank">https://www.boykot.co/</a>
+      <a class="text-sky-400 mr-4 mb-4 p-1 border border-sky-400 rounded" href="https://boykothareketi.com/" target="_blank">https://boykothareketi.com/</a>
+    </UCard>
 
   </UContainer>
 </template>
