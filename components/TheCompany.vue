@@ -3,6 +3,7 @@ defineProps<({
   name: string,
   isBoycott: boolean,
   whyBoycott: string[];
+  proofs?:string[];
   alternatives?: string[];
 })>()
 
@@ -20,16 +21,27 @@ defineProps<({
       </p>
       </div>
     </template>
-    <template #footer>
+    <template #footer v-if="whyBoycott">
       <p v-if="isBoycott" class="font-bold text-lg mb-2">Neden Boykot ?</p>
       <p v-if="whyBoycott.length<2">
         - {{whyBoycott[0]}}
       </p>
-      <ol v-else>
+      <ul v-else>
         <li v-for="w in whyBoycott"  class="list-disc ml-3">
           {{w}}
         </li>
-      </ol>
+      </ul>
+      <template v-if="proofs">
+        <p class="font-bold text-lg mt-4 mb-2">Kanıtlar</p>
+        <ul>
+          <li v-for="proof in proofs">
+            <a :href="proof" class="text-sky-500">
+            {{proof}}
+            </a>
+          </li>
+        </ul>
+      </template>
+      <template v-if="alternatives">
       <p v-if="alternatives?.length>0" class="font-bold text-lg mt-4 mb-2">Alternatifleri :</p>
       <ul>
         <li v-for="alt in alternatives" class="p-1 bg-sky-700 inline-block mr-2 mb-2 rounded">
@@ -38,6 +50,7 @@ defineProps<({
           </p>
         </li>
       </ul>
+      </template>
     </template>
   </UCard>
 </template>
