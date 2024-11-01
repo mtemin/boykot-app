@@ -15,8 +15,9 @@ const companies:Company[] = [
         id:1,
         name:"kahve dünyası",
         isBoycott:true,
-        whyBoycott:["Kahve Dünyası, Filistin'deki soykırım devam ederken yahudilerin hamursuz bayramı (Pesah) için özel bir kek yaparak bu bayramı kutladı","test"],
-        category:"giyim-tekstil",
+        whyBoycott:["Kahve Dünyası, safını belli edercesine tam da Filistin'deki soykırım devam ederken yahudilerin hamursuz bayramı (Pesah) için özel bir kek yaparak bu bayramı kutladı","test"],
+        proofs:["https://www.google.com/","https://www.google.com/"],
+        category:"içecek",
         alternatives:["mahmood","espressolab","kurukahveci mehmet efendi"]
 
     },
@@ -24,8 +25,10 @@ const companies:Company[] = [
         id:2,
         name:"ariel",
         isBoycott:true,
-        whyBoycott:["test","bu bir test"],
-        category:"cosmetic"
+        whyBoycott:[
+            "Ariel'in üst firması P&G(Procter&Gamble), ar-ge merkezini Tel Aviv'de kurdu.",
+            "bu bir test"],
+        category:"temizlik"
 
     },
     {
@@ -44,6 +47,21 @@ const companies:Company[] = [
         category:"otomotiv"
 
     },
+   {
+        id:5,
+        name:"adidas",
+        isBoycott:true,
+        whyBoycott:["Adidas iç çamaşırı ürünlerini israilli üretici Delta Galil'e ürettiriyor."],
+        category:"giyim"
+    },
+    {
+        id:6,
+        name:"axe",
+        isBoycott:true,
+        whyBoycott:[""],
+        category:"kozmetik"
+    },
+
 
 ]
 
